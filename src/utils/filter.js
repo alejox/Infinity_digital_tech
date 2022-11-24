@@ -1,20 +1,20 @@
 const apiFilter = (users, filter) => {
-  if (filter.key == 'name') {
+  if (filter == 'name') {
     users = users.filter(user => user.name == filter.value);
   }
-  if (filter.key == 'company') {
+  if (filter == 'company') {
     users = users.filter(user => user.company.name == filter.value);
   }
-  if (filter.key == 'city') {
+  if (filter == 'city') {
     users = users.filter(user => user.address.city == filter.value);
   }
-  if (filter.keyOrder == 'name') {
+  if (filter == 'name') {
     users = users.sort((a, b) => a.name.localeCompare(b.name));
   }
-  if (filter.keyOrder == 'username') {
+  if (filter == 'username') {
     users = users.sort((a, b) => a.username.localeCompare(b.username));
   }
-  if (filter.keyOrder == 'city') {
+  if (filter == 'city') {
     users = users.sort((a, b) => a.address.city.localeCompare(b.address.city));
   }
 

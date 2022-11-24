@@ -14,34 +14,82 @@
             <div class="modal">
               <article class="modal__grid">
                 <select class="modal__grid--select">
-                  <option class="modal__grid--option" value="">
+                  <option
+                    class="modal__grid--option"
+                    value=""
+                    @change="(e) => filter(e.target.value)"
+                  >
                     Filter by
                   </option>
-                  <option class="modal__grid--option" value="name">Name</option>
-                  <option class="modal__grid--option" value="company">
+                  <option
+                    class="modal__grid--option"
+                    value="name"
+                    @change="(e) => filter(e.target.value)"
+                  >
+                    Name
+                  </option>
+                  <option
+                    class="modal__grid--option"
+                    value="company"
+                    @change="(e) => filter(e.target.value)"
+                  >
                     Company
                   </option>
-                  <option class="modal__grid--option" value="city">City</option>
+                  <option
+                    class="modal__grid--option"
+                    value="city"
+                    @change="(e) => filter(e.target.value)"
+                  >
+                    City
+                  </option>
                 </select>
               </article>
 
               <div class="modal__grid">
                 <select class="modal__grid--select">
-                  <option class="modal__grid--option" value="">Order by</option>
-                  <option class="modal__grid--option" value="name">Name</option>
-                  <option class="modal__grid--option" value="username">
+                  <option
+                    class="modal__grid--option"
+                    value=""
+                    @change="(e) => filter(e.target.value)"
+                  >
+                    Order by
+                  </option>
+                  <option
+                    class="modal__grid--option"
+                    value="name"
+                    @change="(e) => filter(e.target.value)"
+                  >
+                    Name
+                  </option>
+                  <option
+                    class="modal__grid--option"
+                    value="username"
+                    @change="(e) => filter(e.target.value)"
+                  >
                     Username
                   </option>
                   <option class="modal__grid--option" value="city">City</option>
                 </select>
                 <select class="modal__grid--select">
-                  <option class="modal__grid--option" value="">
+                  <option
+                    class="modal__grid--option"
+                    value=""
+                    @change="(e) => filter(e.target.value)"
+                  >
                     Select an option
                   </option>
-                  <option class="modal__grid--option" value="asc">
+                  <option
+                    class="modal__grid--option"
+                    value="asc"
+                    @change="(e) => filter(e.target.value)"
+                  >
                     Ascending
                   </option>
-                  <option class="modal__grid--option" value="desc">
+                  <option
+                    class="modal__grid--option"
+                    value="desc"
+                    @change="(e) => filter(e.target.value)"
+                  >
                     Descending
                   </option>
                 </select>
@@ -66,17 +114,13 @@
 
 <script setup>
 import apiFilter from "@/utils/filter";
-import { ref } from 'vue';
+import { ref } from "vue";
 
 const users = apiFilter;
 
-
-
-
-const filter = ref('')
-const filterValue = ref('')
-const order = ref('')
-const orderValue = ref('')
+const filter = ref("");
+const order = ref("");
+const orderValue = ref("");
 
 defineProps(
   {
